@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.weather-block {
+    width: 300px;
+    margin: 100px auto;
+    background: linear-gradient(to right, #7b66f5, #5420b4);
+    color: #ffffff;
+    padding: 20px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.location {
+    font-size: 20px;
+    margin-top: 15px;
+}
+.column-temp {
+    display: flex;
+    align-items: center;
+}
+.temp {
+    font-size: 25px;
+}
+.icon img {
+    width: 70px;
+}
+.description {
+    font-weight: bold;
+}
+.row-other{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-left: 1px solid #ffffff;
+    padding-left: 20px;
+
+}
