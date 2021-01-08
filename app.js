@@ -8,8 +8,12 @@ function date() {
 }
 date();
 
+let city = prompt("city?");
+let a = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+
+
 function myWeather() {
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19')
+    fetch(`${a}`)
     .then(data => data.json())
     .then(weather => {
 
