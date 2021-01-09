@@ -11,7 +11,7 @@ date();
 
 function myWeather() {
     let city = prompt("city?");
-    let a = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+    let a = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
 
     fetch(`${a}`)
     .then(data => data.json())
