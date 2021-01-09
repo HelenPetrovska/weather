@@ -8,11 +8,11 @@ function date() {
 }
 date();
 
-let city = prompt("city?");
-let a = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
-
 
 function myWeather() {
+    let city = prompt("city?");
+    let a = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+
     fetch(`${a}`)
     .then(data => data.json())
     .then(weather => {
@@ -37,8 +37,6 @@ function myWeather() {
         let descriptionDiv = document.querySelector(".description");
         descriptionDiv.innerHTML = `${description[0].toLocaleUpperCase()+description.substring(1)}, feels like ${Math.round(feels)}&ordm;C`;
 
-        // let newStr = str[0].toLocaleUpperCase() + str.substring(1);
-
         let humidity = weather.main.humidity;
         let humidityDiv = document.querySelector(".humidity");
         humidityDiv.innerHTML = `Humidity: ${humidity}%`;
@@ -62,9 +60,7 @@ function myWeather() {
 myWeather();
 
 
-
-
-// створення на льоту
+// створення нальоту
 // let img = document.createElement("img");
 // let avatar = user.avatar_url;
 // img.setAttribute("src",avatar);
