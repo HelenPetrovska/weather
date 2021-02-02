@@ -7,34 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="weather-block">
-        <div class="row">
-            <div class="column-temp">
-                <div class="icon"></div>
-                <div class="temp"></div>
-            </div>
-            <div class="column">
-                <div class="date"></div>
-                <div class="time"></div>
-                <div class="location"></div>
-            </div>
+    <div class="container">
+        <div class="form">
+            <input type="text" class="input" placeholder="Enter city...">
+            <button class="btn">Show weather</button>
         </div>
-
-        <div class="row-discription">
-            <div class="description"></div>
-        </div>
-        <div class="row-other">
-            <div class="column">
-                <div class="speed"></div>
-                <div class="deg"></div>
+    
+        <div class="weather-block">
+            <div class="row">
+                <div class="column-temp">
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+                <div class="column">
+                    <div class="date"></div>
+                    <div class="time"></div>
+                    <div class="location"></div>
+                </div>
             </div>
-            <div class="column">
-                <div class="pressure"></div>
-                <div class="humidity"></div>
+    
+            <div class="row-discription">
+                <div class="description"></div>
             </div>
+            <div class="row-other">
+                <div class="column">
+                    <div class="speed"></div>
+                    <div class="deg"></div>
+                </div>
+                <div class="column">
+                    <div class="pressure"></div>
+                    <div class="humidity"></div>
+                </div>
+            </div>
+            <div class="timezone"></div>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>

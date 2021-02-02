@@ -1,23 +1,31 @@
-
 function date() {
     let now = new Date();
     let dateDiv = document.querySelector(".date");
     let timeDiv = document.querySelector(".time");
     dateDiv.innerHTML = `${now.toDateString()}`;
-    timeDiv.innerHTML = `${now.toLocaleTimeString().substring(0,5)}`;
+
+    let minutes = now.getMinutes();
+    if (minutes<10) {
+        minutes = `0${minutes}`
+    }
+    timeDiv.innerHTML = `${now.getHours()}:${minutes}`;
 }
 date();
 
 
+let imgDiv = document.querySelector(".icon");
+let img = document.createElement("img");
+imgDiv.append(img);
+
+document.querySelector(".btn").addEventListener("click", myWeather);
+
 function myWeather() {
-    let city = prompt("city?");
-    let a = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+    let valueInput = document.querySelector(".input").value;
+    let a = `https://api.openweathermap.org/data/2.5/weather?q=${valueInput}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
 
     fetch(`${a}`)
     .then(data => data.json())
     .then(weather => {
-
-        console.log(weather)
 
         let city = weather.name;
         let country = weather.sys.country;
@@ -50,14 +58,15 @@ function myWeather() {
         degDiv.innerHTML = `Deg: ${deg}&ordm;`;
  
         let icon = weather.weather[0].icon;
-        let imgDiv = document.querySelector(".icon");
         iconA = `http://openweathermap.org/img/w/${icon}.png`;
-        let img = document.createElement("img");
         img.setAttribute("src", iconA);
-        imgDiv.append(img);
+        
+        let block = document.querySelector(".weather-block");
+        block.style.display = "block";
     })
 }
-myWeather();
+
+
 
 
 // створення нальоту
